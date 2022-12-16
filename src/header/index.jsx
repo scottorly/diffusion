@@ -1,10 +1,10 @@
 
 const props = {
-    description: "Scott Orlyck's website.",
-    title: "Scott Orlyck",
-    image: "https://raw.githubusercontent.com/scottorly/scottorly.github.io/main/thumbnail.png",
+    description: "Gallery of images generated using Stable Diffusion",
+    title: "Diffusion",
+    image: "https://raw.githubusercontent.com/scottorly/diffusion/main/thumbnail.png",
     favicon: "https://raw.githubusercontent.com/scottorly/scottorly.github.io/main/fav.png",
-    url: "https://scottorly.github.io",
+    url: "https://scottorly.github.io/diffsuion",
     twitter: "@orlyck"
 }
 
