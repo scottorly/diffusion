@@ -34,6 +34,9 @@ import { exit } from 'process'
   })
 
   const html = await page.content()
+  await page.emulateMediaFeatures([{
+    name: 'prefers-color-scheme', value: 'dark'
+  }]);
   await page.screenshot({ path: 'thumbnail.png' })
   await browser.close()
 

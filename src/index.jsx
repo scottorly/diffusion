@@ -1,62 +1,32 @@
 import './tufte.module.css'
 import meta from './header'
 import styles from './styles.module.css'
-import images from './images'
 
-const ImagesList = () => images.map(image =>
-    <figure><img src={image} loading="lazy" /></figure>
-)
-
-const Link = ({ children, attributes: { href }}) => (
-    <a target='_blank' rel='noreferrer noopener' href={href}>
-        {children}
-     </a>
-)
-
-const LinkHere = ({ children, attributes: { href }}) => (
-    <a href={href}>
-        {children}
-     </a>
-)
-
-const MarginNote = ({ children, attributes: { id } }) => (
-    <>
-        <label for={id} className="margin-toggle">&#8853;</label>
-        <input type="checkbox" id={id} className="margin-toggle"/>
-        <span className="marginnote">
-            { children }
-        </span>
-    </>
-)
-
-const SideNote = ({ children, attributes: { id } }) => (
-    <>
-        <label for={id} className="margin-toggle sidenote-number"/>
-        <input type="checkbox" id={id} className="margin-toggle"/>
-        <span className="sidenote">
-            { children }
-        </span>
-    </>
-)
-
+const modules = import.meta.glob('./images/*')
+const lazyImages = <figure />
+const Lazy = () => lazyImages
 
 const blog = (
     <article>
         <section>
             <p>
-                <span className='newthought'>Diffusion</span>
+                <h1 className={styles.title}>DIFFUSION</h1>
             </p>
         </section>
-
         <section>
-            <ImagesList />
+            <Lazy />
         </section>
-   
     </article>
 )
+for (const path in modules) {
+    modules[path]().then((mod) => {
+        blog.appendChild(<section><figure><img src={mod.default} /></figure></section>)
+    })
+}
 
 document.head.appendChild(meta)
-document.head.appendChild( 
+document.head.appendChild(
     <script async defer data-domain="scottorly.github.io/diffusion" src="https://plausible.io/js/plausible.js"></script>
 )
+document.body.appendChild(<title>DIFFUSION</title>)
 document.body.appendChild(blog)

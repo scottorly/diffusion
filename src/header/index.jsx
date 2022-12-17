@@ -1,7 +1,7 @@
 
 const props = {
     description: "Gallery of images generated using Stable Diffusion",
-    title: "Diffusion",
+    title: "DIFFUSION",
     image: "https://raw.githubusercontent.com/scottorly/diffusion/main/thumbnail.png",
     favicon: "https://raw.githubusercontent.com/scottorly/scottorly.github.io/main/fav.png",
     url: "https://scottorly.github.io/diffsuion",

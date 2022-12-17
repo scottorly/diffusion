@@ -25,6 +25,7 @@
     "serve": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "node render.mjs && rm docs/**/*.js",
+    "dist-win": "node render.mjs && del .\\docs\\assets\\*.js",
     "start": "NODE_ENV=development webpack serve --mode development"
   },
   "keywords": [],
