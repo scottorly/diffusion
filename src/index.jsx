@@ -39,9 +39,11 @@ const blog = (
             <p className="subtitle">
                 <a href='https://scottorly.github.io'>Scott Orlyck</a>
             </p>
+        </section>
+        <section>
             <p>
                 <MarginNote>
-                    <p><Link href='https://gist.github.com/scottorly/ce416b17be4f32f75be2c59abcc624d4'>Pipeline examples</Link></p>
+                    <Link href='https://gist.github.com/scottorly/ce416b17be4f32f75be2c59abcc624d4'>Pipeline examples</Link>
                 </MarginNote>
             </p>
         </section>
