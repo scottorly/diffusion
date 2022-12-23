@@ -36,18 +36,17 @@ const blog = (
     <article>
         <section>
             <h1 className={styles.title}>DIFFUSION</h1>
+           
             <p className="subtitle">
                 <a href='https://scottorly.github.io'>Scott Orlyck</a>
             </p>
         </section>
         <section>
             <p>
-                <MarginNote>
+                <MarginNote id='examples'>
                     <Link href='https://gist.github.com/scottorly/ce416b17be4f32f75be2c59abcc624d4'>Pipeline examples</Link>
                 </MarginNote>
             </p>
-        </section>
-        <section>
             <Lazy />
         </section>
     </article>
