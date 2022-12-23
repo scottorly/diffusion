@@ -2,6 +2,32 @@ import './tufte.module.css'
 import meta from './header'
 import styles from './styles.module.css'
 
+const Link = ({ children, attributes: { href }}) => (
+    <a target='_blank' rel='noreferrer noopener' href={href}>
+        {children}
+     </a>
+)
+
+const MarginNote = ({ children, attributes: { id } }) => (
+    <>
+        <label for={id} className="margin-toggle">&#8853;</label>
+        <input type="checkbox" id={id} className="margin-toggle"/>
+        <span className="marginnote">
+            { children }
+        </span>
+    </>
+)
+
+const SideNote = ({ children, attributes: { id } }) => (
+    <>
+        <label for={id} className="margin-toggle sidenote-number"/>
+        <input type="checkbox" id={id} className="margin-toggle"/>
+        <span className="sidenote">
+            { children }
+        </span>
+    </>
+)
+
 const modules = import.meta.glob('./images/*')
 const lazyImages = <figure />
 const Lazy = () => lazyImages
@@ -9,8 +35,14 @@ const Lazy = () => lazyImages
 const blog = (
     <article>
         <section>
+            <h1 className={styles.title}>DIFFUSION</h1>
+            <p className="subtitle">
+                <a href='https://scottorly.github.io'>Scott Orlyck</a>
+            </p>
             <p>
-                <h1 className={styles.title}>DIFFUSION</h1>
+                <MarginNote>
+                    <p><Link href='https://gist.github.com/scottorly/ce416b17be4f32f75be2c59abcc624d4'>Pipeline examples</Link></p>
+                </MarginNote>
             </p>
         </section>
         <section>
